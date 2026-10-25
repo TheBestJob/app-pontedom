@@ -1,25 +1,22 @@
-# PonteDom Mobile — Demo 1.0
+# PonteDom Mobile — Website-based demo
 
-Mobile-first interactive web prototype for [PonteDom](https://pontedom.pl/), inspired by the Mój Pingwinek demo.
+This project is a mobile-adapted copy of the user-supplied PonteDom website source, not a separate property catalogue.
 
-## Features
-- Responsive mobile app-like interface and bottom navigation
-- Polish, English and Italian interface
-- Search criteria and locally saved searches (browser localStorage)
-- Shortcuts to the live PonteDom website
-- Contact form that prepares an email in the visitor's mail app (the recipient address must be verified before production use)
+## Source and live integrations
+- Original PonteDom HTML, styles, layout and translations (PL/EN/IT)
+- Leaflet/OpenStreetMap property map
+- Listing data loaded by the original code from `https://adriatica-backend.onrender.com/api/listings`
+- Existing listing filters, cards/list/large display modes, property details and gallery
+- Original Formspree endpoints for property inquiries and home-finding forms
+- Extra five-button mobile navigation (Home, Listings, Map, Find a Home, About)
 
-## Important limitations
-- This demo **does not fetch live listing records**: no property feed/API has been confirmed. Search opens the live website rather than applying the demo criteria to its listings.
-- Saved searches stay on the device/browser only.
-- No account login, listing synchronization, native Android APK, or backend messaging.
-- Contact recipient is a placeholder pending confirmation.
-- This project does not modify pontedom.pl or the earlier pontedom-app repository.
+## Hosting
+GitHub Pages: Settings → Pages → Deploy from a branch → main / (root).
+Expected URL: https://thebestjob.github.io/app-pontedom/
 
-## GitHub Pages
-Repository **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**.
-
-Expected URL once Pages is enabled: https://thebestjob.github.io/app-pontedom/
-
-## Next steps
-Confirm a reliable property data endpoint, map the listing schema (id, title, type, location, price, photos, geo coordinates), then implement actual search, favorites and detail pages. Confirm the inquiry endpoint before accepting real messages.
+## Important
+- This is a separate deployment; it does not modify the live pontedom.pl website.
+- Render API must permit cross-origin requests from the GitHub Pages origin. If CORS blocks requests, the app cannot show listings until the backend is configured.
+- Availability of the API and submissions have not been end-to-end verified.
+- Test all languages, list/card modes, property galleries, map markers and forms on a real phone.
+- Avoid replacing the original API or Formspree endpoints without testing.
